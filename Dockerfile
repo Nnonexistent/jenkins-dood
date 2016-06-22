@@ -14,6 +14,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         autoconf \
         automake \
         bzip2 \
+        cloc \
         file \
         g++ \
         gcc \
