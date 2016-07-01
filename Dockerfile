@@ -47,14 +47,14 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         patch \
         python-dev \
         python-pip \
-        sudo \
         xz-utils \
         zlib1g-dev && \
     rm -rf /var/lib/apt/lists/* && \
     pip install -U docker-compose virtualenv
 
-# Add jenkins user to sudo to give access to docker daemon
-RUN echo "jenkins ALL=NOPASSWD: ALL" >> /etc/sudoers
+# Allow jenkins to manage docker daemon
+# WARNING: This is high security risk as all jobs creators have now root privilegues on HOST docker machine
+RUN groupadd -f docker && usermod -aG docker jenkins
 
 # Switch back to jenkins user
 USER jenkins
