@@ -54,7 +54,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 # Allow jenkins to manage docker daemon
 # WARNING: This is high security risk as all jobs creators have now root privilegues on HOST docker machine
-RUN groupadd -f docker && usermod -aG docker jenkins
+RUN groupadd -f docker && \
+    usermod -aG docker jenkins && \
+    usermod -aG www-data jenkins
 
 # Switch back to jenkins user
 USER jenkins
