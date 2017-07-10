@@ -47,6 +47,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         patch \
         python-dev \
         python-pip \
+        python-setuptools \
         xz-utils \
         zlib1g-dev && \
     rm -rf /var/lib/apt/lists/* && \
