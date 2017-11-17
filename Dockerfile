@@ -51,7 +51,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         xz-utils \
         zlib1g-dev && \
     rm -rf /var/lib/apt/lists/* && \
-    pip install -U docker-compose virtualenv
+    pip install -U docker-compose virtualenv envtpl
 
 # Allow jenkins to manage docker daemon
 # WARNING: This is high security risk as all jobs creators have now root privilegues on HOST docker machine
