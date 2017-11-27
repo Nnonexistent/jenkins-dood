@@ -5,7 +5,7 @@
 docker build --pull -t jenkins-dood .
 
 # Remove old jenkins container
-docker rm -vf jenkins
+docker rm jenkins
 
 # Run container
 docker run -dt -p 127.0.0.1:49001:8080 \
