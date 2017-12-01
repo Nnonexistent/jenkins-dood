@@ -4,7 +4,8 @@
 # Build image
 docker build --pull -t jenkins-dood .
 
-# Remove old jenkins container
+# Stop & remove old jenkins container
+docker stop jenkins
 docker rm jenkins
 
 # Run container
