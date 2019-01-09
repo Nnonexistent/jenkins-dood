@@ -1,4 +1,4 @@
-FROM jenkinsci/jenkins
+FROM jenkins/jenkins
 
 # Switch from jenkins user to root to install packages
 USER root
